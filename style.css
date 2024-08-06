@@ -1,0 +1,33 @@
+body,
+html {
+    /* height: 100%; */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    height: 100vh;
+}
+
+.header {
+    grid-row: 1;
+    grid-column: 2/3;
+    height: 100px;
+    grid-area: header;
+}
+
+.sidebar {
+    background-color: rgb(17, 147, 234);
+    /* grid-row: span 2; */
+    grid-area: sidebar;
+}
+
+.main {
+    grid-area: main;
+}
