@@ -1,33 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body,
 html {
     /* height: 100%; */
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 .container {
     display: grid;
     grid-template-columns: 240px 1fr;
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 160px 1fr;
     grid-template-areas:
         "sidebar header"
         "sidebar main";
     height: 100vh;
 }
 
-.header {
-    grid-row: 1;
-    grid-column: 2/3;
-    height: 100px;
-    grid-area: header;
+.sidebar {
+    background-color: #1e40af;
+    grid-area: sidebar;
+    padding: 20px 0 0 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
-.sidebar {
-    background-color: rgb(17, 147, 234);
-    /* grid-row: span 2; */
-    grid-area: sidebar;
+.nav-wrapper {
+    display: flex;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.nav-wrapper.logo {
+    margin-bottom: 40px;
+    align-items: center;
 }
 
 .main {
     grid-area: main;
+}
+
+ul.side-nav {
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-wrapper.settings {
+    margin-top: 40px;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    margin-top: 0;
+    gap: 0px;
+    padding: 20px 40px 0 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-icon {
+    margin-top: 4px;
+}
+
+.search-bar>input {
+    height: 25px;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 10px;
+    border: 0px;
+    background-color: rgb(229, 229, 229);
+}
+
+.user-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    border-radius: 25px;
+    background-color: #1e40af;
+    border: 0px;
+    padding: 5px 20px;
+    color: white;
+    font-weight: 500;
+}
+
+.user-heading-wrapper {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-template-rows: 31x 1fr;
+    column-gap: 10px;
+}
+
+.user-heading-small {
+    align-self: end;
+    font-size: 14px;
+    margin: 0;
+}
+
+.user-heading-icon {
+    grid-row: span 2;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.main {
+    padding: 40px 30px 0 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 30px 1fr;
+    column-gap: 50px;
+    color: #424242;
+}
+
+.projects {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(3, 200px);
+    gap: 20px;
+}
+
+.project-card {
+    border-left: 5px solid #fb923c;
+    border-radius: 4px;
+    position: relative;
+}
+
+h3.project-headline {
+    margin: 0;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.project-card p {
+    font-size: 13px;
+}
+
+.project-card-icons {
+    position: absolute;
+    bottom: 30px;
+    right: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+h1,
+h2 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+h3.announcement {
+    font-size: 13px;
+    margin: 0;
+}
+
+.card {
+    padding: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.announcement-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+.announcement-card {
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+.announcement-card:not(:last-child) {
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+
+p {
+    margin: 3px 0;
+    color: rgb(95, 94, 94);
+}
+
+.trending-card-wrapper h2 {
+    margin-bottom: 10px;
+}
+
+.trending-card {
+    display: flex;
+    gap: 10px;
+}
+
+.trending-card:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.trending-user-username {
+    font-size: 13px;
+}
+
+.trending-user-bio {
+    font-size: 12px;
 }
